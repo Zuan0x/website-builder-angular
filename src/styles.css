@@ -37,3 +37,8 @@ button.secondary {
 button.secondary:hover {
   background: var(--accent-color);
 }
+
+button.secondary:active {
+  background: var(--secondary-color);
+  color: var(--white-color);
+}
