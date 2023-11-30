@@ -1,10 +1,12 @@
 import {Component} from '@angular/core';
 import {HomeComponent} from './home/home.component';
 import {RouterModule} from '@angular/router';
+import { LayoutComponent } from './layout/layout.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent, RouterModule],
+  imports: [HomeComponent, LayoutComponent, RouterModule],
   template: `
     <main>
       <a [routerLink]="['/']">
@@ -13,7 +15,7 @@ import {RouterModule} from '@angular/router';
         </header>
       </a>
       <section class="content">
-        
+        <app-layout></app-layout>
       </section>
     </main>
   `,
