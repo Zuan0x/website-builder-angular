@@ -12,6 +12,9 @@ import { LayoutComponent } from './layout/layout.component';
       <a [routerLink]="['/']">
         <header class="brand-name">
           <img class="brand-logo" src="/assets/logo-text.png" alt="logo" aria-hidden="true" height="60px"/>
+          <button class="secondary" type="button">Home</button>
+          <button class="secondary" type="button">Templates</button>
+          <button class="secondary" type="button">Pages</button>
         </header>
       </a>
       <section class="content">

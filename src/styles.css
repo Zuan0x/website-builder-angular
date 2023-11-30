@@ -12,6 +12,7 @@ body {
   --secondary-color: #F7BCA3;
   --accent-color: #FDF1EB;
   --shadow-color: #E8E8E8;
+  --white-color: #FFFFFF;
 }
 
 button.primary {
@@ -20,4 +21,19 @@ button.primary {
   background: var(--primary-color);
   color: white;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+button.secondary {
+  padding: 10px;
+  background: var(--white-color);
+  color: var(--primary-color);
+  border-radius: 8px;
+  border: 0px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+button.secondary:hover {
+  background: var(--accent-color);
 }
