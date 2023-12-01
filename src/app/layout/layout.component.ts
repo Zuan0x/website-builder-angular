@@ -29,7 +29,7 @@ import {SidebarComponent} from '../sidebar/sidebar.component';
 export class LayoutComponent {
   components = ['text', 'image', 'card'];
 
-  design = [];
+  design = [""];
 
   drop(event: CdkDragDrop<string[]>) {
     if(event.container.id !== "components"){
