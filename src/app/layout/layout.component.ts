@@ -11,6 +11,7 @@ import {
   CdkDropListGroup,
   moveItemInArray,
   transferArrayItem,
+  copyArrayItem
 } from '@angular/cdk/drag-drop';
 import {CommonModule} from '@angular/common';
 import {SidebarComponent} from '../sidebar/sidebar.component';
@@ -26,20 +27,22 @@ import {SidebarComponent} from '../sidebar/sidebar.component';
   imports: [MatSidenavModule, MatButtonModule, MatGridListModule, CdkDropListGroup, CdkDropList, CdkDrag, SidebarComponent, CommonModule],
 })
 export class LayoutComponent {
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+  components = ['text', 'image', 'card'];
 
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+  design = [];
 
   drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
+    if(event.container.id !== "components"){
+      if (event.previousContainer === event.container) {
+        moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      } else {
+        copyArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex,
+        );
+      }
     }
   }
 }
