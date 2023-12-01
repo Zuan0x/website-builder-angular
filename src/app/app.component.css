@@ -10,7 +10,7 @@ header {
   align-items: center;
 }
 .content {
-  padding: var(--content-padding);
+  height: calc(100vh - 60px);
 }
 
 .brand-logo {

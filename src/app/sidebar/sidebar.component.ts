@@ -6,12 +6,15 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>
-      sidebar works!
-    </p>
+  <div class="sidebar-background">
+    <h3 style='padding: 14px'>Components</h3>
+    <button class="sidebar-button" type="button">Text</button>
+    <button class="sidebar-button" type="button">Images</button>
+    <button class="sidebar-button" type="button">Card</button>
+    </div>
+    
   `,
-  styles: [
-  ]
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
 
