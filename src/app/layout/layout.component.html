@@ -11,8 +11,8 @@
               (cdkDropListDropped)="drop($event)">
               @for (component of components; track component) {
                 <div class="component-box" cdkDrag>
-                    {{component}}
-                    <img src="/assets/{{component}}-icon.svg" alt="{{component}}" width="30px" height="30px" class="icon">
+                    {{component.type}}
+                    <img src="/assets/{{component.type}}-icon.svg" alt="{{component.type}}" width="30px" height="30px" class="icon">
                 </div>
               }
             </div>
@@ -30,7 +30,21 @@
           id="design"
           (cdkDropListDropped)="drop($event)">
           @for (item of design; track item) {
-            <div class="design-box" cdkDrag>{{item}}</div>
+            <!-- <div class="design-box" cdkDrag>{{item}}</div> -->
+            <ng-container *ngIf="item.type === 'text'">
+                <div class="design-box" cdkDrag>{{item.type}}</div>
+                <!-- <app-text-component [data]="item"></app-text-component> -->
+              </ng-container>
+            
+              <ng-container *ngIf="item.type === 'image'">
+                <div class="design-box" cdkDrag>{{item.type}}</div>
+                <!-- <app-image-component [data]="item"></app-image-component> -->
+              </ng-container>
+            
+              <ng-container *ngIf="item.type === 'card'">
+                <div class="design-box" cdkDrag>{{item.type}}</div>
+                <!-- <app-card-component [data]="item"></app-card-component> -->
+              </ng-container>
           }
         </div>
       </div>
@@ -122,7 +136,5 @@
   }
 
   .icon {
-    color: aqua;
-    background-color: blueviolet;
   }
   </style>

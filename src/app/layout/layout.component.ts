@@ -15,6 +15,7 @@ import {
 } from '@angular/cdk/drag-drop';
 import {CommonModule} from '@angular/common';
 import {SidebarComponent} from '../sidebar/sidebar.component';
+import { designComponent } from '../types';
 
 /**
  * @title Autosize sidenav
@@ -27,11 +28,11 @@ import {SidebarComponent} from '../sidebar/sidebar.component';
   imports: [MatSidenavModule, MatButtonModule, MatGridListModule, CdkDropListGroup, CdkDropList, CdkDrag, SidebarComponent, CommonModule],
 })
 export class LayoutComponent {
-  components = ['text', 'image', 'card'];
+  components = [{type: 'text'}, {type: 'image'}, {type: 'card'}];
 
-  design = [""];
+  design = [{type: "blank"}];
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<designComponent[]>) {
     if(event.container.id !== "components"){
       if (event.previousContainer === event.container) {
         moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
